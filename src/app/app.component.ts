@@ -14,7 +14,7 @@ export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = SuchePage;
 
   pages: Array<{
     title: string, 
@@ -27,11 +27,12 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Suche', component: SuchePage, icon: "search"  },
+      { title: 'Suche', component: SuchePage, icon: "search"  }, //NOT Lazy Loading
       { title: 'Verkaufen', component: 'VerkaufenPage', icon: "cash"  }, //Lazy Loading,
       { title: 'Bewerten', component: 'BewertenPage', icon: "trending-up"  }, //Lazy Loading
       { title: 'Parkplatz', component: 'ParkplatzPage', icon: "bus"  }, //Lazy Loading
       { title: 'Meine Suchen', component: 'MeineSuchenPage', icon: "star"  }, //Lazy Loading
+      { title: 'List', component: ListPage, icon: "menu"  }, //NOT Lazy Loading
    
     ];
 

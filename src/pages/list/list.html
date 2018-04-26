@@ -8,12 +8,13 @@
 </ion-header>
 
 <ion-content>
+<div>The icon array has {{this.icons.length}} items, but only XXX items are shown</div>
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon [name]="item.icon" item-start></ion-icon>
       {{item.title}}
       <div class="item-note" item-end>
-        {{item.note}}
+        ({{item.note}}) id:{{item.id}}
       </div>
     </button>
   </ion-list>
