@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { SuchePage } from '../pages/suche/suche';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +18,8 @@ export class MyApp {
 
   pages: Array<{
     title: string, 
-    component: any}
+    component: any,
+    icon: string}
     >;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
@@ -25,8 +27,12 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Suche', component: SuchePage, icon: "search"  },
+      { title: 'Verkaufen', component: 'VerkaufenPage', icon: "cash"  }, //Lazy Loading,
+      { title: 'Bewerten', component: 'BewertenPage', icon: "trending-up"  }, //Lazy Loading
+      { title: 'Parkplatz', component: 'ParkplatzPage', icon: "bus"  }, //Lazy Loading
+      { title: 'Meine Suchen', component: 'MeineSuchenPage', icon: "star"  }, //Lazy Loading
+   
     ];
 
   }
