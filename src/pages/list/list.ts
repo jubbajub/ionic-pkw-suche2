@@ -1,3 +1,4 @@
+import { SuchePage } from './../suche/suche';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -7,6 +8,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 
 export class ListPage {
+
+  navigateToSuchepage(){
+    this.navCtrl.push(SuchePage); //Not LazyLoaded
+  }
+  ionViewDidLoad() {
+    console.log('_ionViewDidLoad ListPage');
+    console.log('_selectedItem: '+ this.selectedItem);
+    
+  }  
 
   selectedItem: any;
   icons: string[];

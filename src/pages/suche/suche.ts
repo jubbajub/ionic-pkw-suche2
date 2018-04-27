@@ -1,16 +1,9 @@
 import { ListPage } from './../list/list';
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the SuchePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-@IonicPage()
 @Component({
   selector: 'page-suche',
   templateUrl: 'suche.html',
@@ -21,6 +14,11 @@ export class SuchePage {
   navigateToListpage(){
     this.navCtrl.push(ListPage); //Not LazyLoaded
   }
+  ionViewDidLoad() {
+    console.log('_ionViewDidLoad SuchePage');
+    console.log('_selectedItem: '+ this.selectedItem);
+    
+  }  
 
   selectedItem: any;
   icons: string[];
