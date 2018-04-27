@@ -14,7 +14,7 @@ export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SuchePage;
+  rootPage: any = SuchePage; // Not Lazy Loading
 
   pages: Array<{
     title: string, 
@@ -25,14 +25,14 @@ export class MyApp {
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
+    // used for an example of ngFor and navigation in the Menu
     this.pages = [
       { title: 'Suche', component: SuchePage, icon: "search"  }, //NOT Lazy Loading
       { title: 'Verkaufen', component: 'VerkaufenPage', icon: "cash"  }, //Lazy Loading,
       { title: 'Bewerten', component: 'BewertenPage', icon: "trending-up"  }, //Lazy Loading
       { title: 'Parkplatz', component: 'ParkplatzPage', icon: "bus"  }, //Lazy Loading
       { title: 'Meine Suchen', component: 'MeineSuchenPage', icon: "star"  }, //Lazy Loading
-      { title: 'List', component: ListPage, icon: "menu"  }, // Lazy Loading
+      { title: 'List', component: ListPage, icon: "menu"  }, // Not Lazy Loading
    
     ];
 
