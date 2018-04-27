@@ -11,6 +11,11 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SuchePage } from '../pages/suche/suche';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+import { FIREBASE_CONFIG } from './firebase.credentials';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,6 +26,8 @@ import { SuchePage } from '../pages/suche/suche';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireDatabaseModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
