@@ -9,14 +9,24 @@
   
   <ion-content>
     <ion-list>
-        <button ion-item detail-push (click)="itemTapped($event, item)">
+        <ion-item>
+            <ion-label>Auto oder Motorrad</ion-label>
+            <ion-select [(ngModel)]="vehicleType">
+              <ion-option value="all">Alle</ion-option>
+              <ion-option value="car">Auto</ion-option>
+              <ion-option value="motorcycle">Motorrad</ion-option>
+            </ion-select>
+          </ion-item>
+        <button ion-item detail-push (click)="doPrompt()">
+            <ion-icon [name]="home" item-start></ion-icon>
+            Auto oder Motorrad
+          </button>
+
+        <button ion-item detail-push (click)="doPrompt()">
           <ion-icon name="home" item-start></ion-icon>
           Marke/Modell
         </button>
-        <button ion-item >
-          <ion-icon [name]="home" item-start></ion-icon>
-          Marke/Modell
-        </button>
+
         <button ion-item >
           <ion-icon [name]="home" item-start></ion-icon>
           Marke/Modell
@@ -30,5 +40,6 @@
         <ion-icon [name]="home" item-start></ion-icon>
         navigate To Listpage
       </button>
+      
   </ion-content>
   

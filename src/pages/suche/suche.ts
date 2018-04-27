@@ -1,7 +1,7 @@
 import { ListPage } from './../list/list';
 
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 
 @Component({
@@ -16,9 +16,9 @@ export class SuchePage {
   }
   ionViewDidLoad() {
     console.log('_ionViewDidLoad SuchePage');
-    // console.log('_selectedItem: '+ this.selectedItem);
+    console.log('_vehicleType: '+ this.vehicleType);
   }  
-
+  vehicleType: string;
   selectedItem: any;
   icons: string[];
 
@@ -30,7 +30,7 @@ export class SuchePage {
     id: number,
   }>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
@@ -68,5 +68,36 @@ export class SuchePage {
     alert("item clicked event: "+ item);
   }
 
+  doPrompt() {
+    let alert = this.alertCtrl.create({
+      title: 'MARKE',
+      message: 'Marke und Modell eingeben',
+      inputs: [
+        {
+          name: 'title',
+          placeholder: 'Title'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel!',
+          handler: () => {
+            console.log('Cancel clicked');
+            console.log(name);
+          }
+        },
+        {
+          text: 'Save',
+          handler: () => {
+            console.log('Saved clicked');
+            console.log();
+          }
+        }
+      ]
+    });
 
+    alert.present();
+  }
+
+  
 }
