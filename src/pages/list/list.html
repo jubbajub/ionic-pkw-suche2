@@ -21,4 +21,8 @@
   <div *ngIf="selectedItem" padding>
     You navigated here from <b>{{selectedItem.title}}</b>
   </div>
+  <button ion-button block (click)="navigateToSuchepage()">
+      <ion-icon [name]="home" item-start></ion-icon>
+      navigate To Suchepage
+    </button>
 </ion-content>

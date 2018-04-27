@@ -1,3 +1,5 @@
+import { ListPage } from './../list/list';
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,6 +17,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 
 export class SuchePage {
+  
+  navigateToListpage(){
+    this.navCtrl.push(ListPage); //Not LazyLoaded
+  }
 
   selectedItem: any;
   icons: string[];
@@ -64,4 +70,6 @@ export class SuchePage {
     console.log(event);
     alert("item clicked event: "+ event);
   }
+
+
 }

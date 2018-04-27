@@ -32,7 +32,7 @@ export class MyApp {
       { title: 'Bewerten', component: 'BewertenPage', icon: "trending-up"  }, //Lazy Loading
       { title: 'Parkplatz', component: 'ParkplatzPage', icon: "bus"  }, //Lazy Loading
       { title: 'Meine Suchen', component: 'MeineSuchenPage', icon: "star"  }, //Lazy Loading
-      { title: 'List', component: ListPage, icon: "menu"  }, //NOT Lazy Loading
+      { title: 'List', component: ListPage, icon: "menu"  }, // Lazy Loading
    
     ];
 

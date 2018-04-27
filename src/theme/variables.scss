@@ -46,13 +46,14 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
+$item-ios-detail-push-show: true; //default is true
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+$item-md-detail-push-show : true; //default is false
 
 
 
@@ -60,7 +61,7 @@ $colors: (
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
-
+$item-wp-detail-push-show: true; //default is false
 
 
 // App Theme
