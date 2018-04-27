@@ -64,6 +64,6 @@ export class ListPage {
       item: item
     });
     console.log(event);
-    alert("item clicked event: "+ event);
+    alert("item clicked item: "+ item);
   }
 }

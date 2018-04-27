@@ -16,8 +16,7 @@ export class SuchePage {
   }
   ionViewDidLoad() {
     console.log('_ionViewDidLoad SuchePage');
-    console.log('_selectedItem: '+ this.selectedItem);
-    
+    // console.log('_selectedItem: '+ this.selectedItem);
   }  
 
   selectedItem: any;
@@ -66,7 +65,7 @@ export class SuchePage {
       item: item
     });
     console.log(event);
-    alert("item clicked event: "+ event);
+    alert("item clicked event: "+ item);
   }
 
 
