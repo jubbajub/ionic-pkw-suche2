@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -8,7 +8,24 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Überschrift</h3>
+    <ion-item>
+      <ion-label>Topic:</ion-label>
+      <ion-input [(ngModel)]="annonce.topic" placeholder="Überschrift der Annonce"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Vehicle Type:</ion-label>
+      <ion-input [(ngModel)]="annonce.vehicleType" placeholder="PKW oder Motorrad"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Brand:</ion-label>
+      <ion-input [(ngModel)]="annonce.brand" placeholder="BMW, VW etc."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Price:</ion-label>
+      <ion-input [(ngModel)]="annonce.price" type="number" placeholder="10.000"></ion-input>
+    </ion-item>
 
-  inhalt - lazy geladen
+    {{annonce | json}}
+
+    <button ion-button block >Annonce Inserieren = Verkaufen</button>
 </ion-content>

@@ -1,12 +1,8 @@
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Annonce } from '../../models/annonce/annonce.interface';
 
-/**
- * Generated class for the VerkaufenPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,6 +10,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'verkaufen.html',
 })
 export class VerkaufenPage {
+
+  annonce: Annonce = {
+    topic: '',
+    vehicleType: '',
+    brand: '',
+    price: undefined
+  }
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
