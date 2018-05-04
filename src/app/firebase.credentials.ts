@@ -1,3 +1,11 @@
+//Freischalten und Rechte nicht vergessen!!!
+//Firebase --> Database -->Rules
+// {
+//   "rules": {
+//     ".read": true,
+//     ".write": true
+//   }
+// }
 export const FIREBASE_CONFIG = {
     apiKey: "AIzaSyBZwN5XtZk0Kp80QVeHNL6Lk5NKK9xlJuk",
     authDomain: "ionic-pkw-suche2.firebaseapp.com",

@@ -1,3 +1,4 @@
+import { AnnonceListService } from './../services/annonce-list/annonce-list-services';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -39,7 +40,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AnnonceListService
   ]
 })
 export class AppModule {}

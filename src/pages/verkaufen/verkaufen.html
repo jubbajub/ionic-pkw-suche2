@@ -18,7 +18,7 @@
     </ion-item>
     <ion-item>
       <ion-label>Brand:</ion-label>
-      <ion-input [(ngModel)]="annonce.brand" placeholder="BMW, VW etc."></ion-input>
+      <ion-input [(ngModel)]="annonce.brand" placeholder="Marke/Brand"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Price:</ion-label>
@@ -27,5 +27,5 @@
 
     {{annonce | json}}
 
-    <button ion-button block >Annonce Inserieren = Verkaufen</button>
+    <button ion-button block (click)="addAnnonce(annonce)">Annonce Inserieren = Verkaufen</button>
 </ion-content>
