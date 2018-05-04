@@ -61,10 +61,12 @@ export class VerkaufenPage {
   addAnnonce(annonce: Annonce){
     this.verkaufen.addAnnonce(annonce);
     console.log("annonce.topic: " + annonce.topic);
-    this.navCtrl.push(SuchePage);
+    //this.navCtrl.push(SuchePage);
+    this.navCtrl.push(VerkaufenPage);
+    
   }
 
-  doRadio() {
+  doRadioVehicleType() {
     let alert = this.alertCtrl.create();
     alert.setTitle('Auto oder Motorrad?');
 
@@ -91,10 +93,47 @@ export class VerkaufenPage {
         this.testRadioResult = data;
         this.annonce.vehicleType=data;
 
-        this.verkaufen.addAnnonce(this.annonce);
+        //this.verkaufen.addAnnonce(this.annonce);
         console.log("annonce.vehicleType: " + this.annonce.vehicleType);
         // this.navCtrl.push(SuchePage);
         
+      }
+    });
+
+    alert.present();
+  }
+
+  doRadioBrand() {
+    let alert = this.alertCtrl.create();
+    alert.setTitle('Marke');
+
+    alert.addInput({
+      type: 'radio',
+      label: 'VW',
+      value: 'vw',
+      checked: true
+    });
+
+    alert.addInput({
+      type: 'radio',
+      label: 'BMW',
+      value: 'bmw'
+    });
+
+
+    alert.addButton('Abbrechen');
+    alert.addButton({
+      text: 'Ok',
+      handler: (data: any) => {
+        console.log('Radio data:', data);
+        this.testRadioOpen = false;
+        this.testRadioResult = data;
+        this.annonce.brand=data;
+
+        //this.verkaufen.addAnnonce(this.annonce);
+        console.log("annonce.brand: " + this.annonce.brand);
+        // this.navCtrl.push(SuchePage);
+      
       }
     });
 

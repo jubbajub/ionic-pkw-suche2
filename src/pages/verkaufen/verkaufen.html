@@ -24,18 +24,22 @@
       <ion-label>Price:</ion-label>
       <ion-input [(ngModel)]="annonce.price" type="number" placeholder="10.000"></ion-input>
     </ion-item> -->
-    <button ion-button color="light" block (click)="doRadio()">
+    <button ion-button color="light" block (click)="doRadioVehicleType()">
       Auto oder Motorrad
-      <p><br>{{annonce.vehicleType | json}}</p>
     </button>
-
-    {{annonce | json}}
+    <ion-label>{{annonce.vehicleType}}</ion-label>
+    
+    <button ion-button color="light" block (click)="doRadioBrand()">
+        MARKE
+      </button>
+    <p>{{annonce.brand | json}}</p>
+ 
 
     <button ion-button block (click)="addAnnonce(annonce)">Annonce Inserieren = Verkaufen</button>
 
     <ion-list>
       <ion-item *ngFor="let annonce of annonceList$ | async">
-        <h2>Annonce Überschrift: {{annonce.topic}}</h2>
+        <h2>Annonce brand: {{annonce.brand}}</h2>
         <h3>Annonce vehicleType: {{annonce.vehicleType}}</h3>
       </ion-item>
     </ion-list>
