@@ -1,8 +1,10 @@
+import { SuchePage } from './../suche/suche';
 import { AnnonceListService } from './../../services/annonce-list/annonce-list-services';
 
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Annonce } from '../../models/annonce/annonce.interface';
+import { Observable } from 'rxjs/Observable';
 
 
 @IonicPage()
@@ -11,6 +13,8 @@ import { Annonce } from '../../models/annonce/annonce.interface';
   templateUrl: 'verkaufen.html',
 })
 export class VerkaufenPage {
+
+  annonceList$: Observable<Annonce[]>;
 
   annonce: Annonce = {
     topic: '',
@@ -26,7 +30,18 @@ export class VerkaufenPage {
     //'verkaufen' muss im constructor geladen werden und auf den Service zu verweisen
     //im Service sind die Methoden, die am besten die selben Bezeichnungen (addAnnoce) haben wie hier
     private verkaufen: AnnonceListService, 
+
   ) {
+    this.annonceList$ = this.verkaufen
+    .getAnnonceList() //returns DB List
+    .snapshotChanges() // reurns Key and Value
+    .map(
+      changes =>{
+        return changes.map(c=>({
+          key: c.payload.key, ...c.payload.val()
+        }))
+      }
+    )
   }
 
   ionViewDidLoad() {
@@ -39,6 +54,7 @@ export class VerkaufenPage {
   addAnnonce(annonce: Annonce){
     this.verkaufen.addAnnonce(annonce);
     console.log("annonce.topic: " + annonce.topic);
+    this.navCtrl.push(SuchePage);
   }
 
 }
