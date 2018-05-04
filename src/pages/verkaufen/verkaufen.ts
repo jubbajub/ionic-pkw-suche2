@@ -2,9 +2,10 @@ import { SuchePage } from './../suche/suche';
 import { AnnonceListService } from './../../services/annonce-list/annonce-list-services';
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Annonce } from '../../models/annonce/annonce.interface';
 import { Observable } from 'rxjs/Observable';
+
 
 
 @IonicPage()
@@ -13,6 +14,9 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'verkaufen.html',
 })
 export class VerkaufenPage {
+
+  testRadioOpen = false;
+  testRadioResult: any;
 
   annonceList$: Observable<Annonce[]>;
 
@@ -31,6 +35,8 @@ export class VerkaufenPage {
     //im Service sind die Methoden, die am besten die selben Bezeichnungen (addAnnoce) haben wie hier
     private verkaufen: AnnonceListService, 
 
+    private alertCtrl: AlertController,
+
   ) {
     this.annonceList$ = this.verkaufen
     .getAnnonceList() //returns DB List
@@ -43,6 +49,7 @@ export class VerkaufenPage {
       }
     )
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VerkaufenPage');
@@ -57,6 +64,42 @@ export class VerkaufenPage {
     this.navCtrl.push(SuchePage);
   }
 
+  doRadio() {
+    let alert = this.alertCtrl.create();
+    alert.setTitle('Auto oder Motorrad?');
 
-  
+    alert.addInput({
+      type: 'radio',
+      label: 'Auto',
+      value: 'auto',
+      checked: true
+    });
+
+    alert.addInput({
+      type: 'radio',
+      label: 'Motorrad',
+      value: 'motorrad'
+    });
+
+
+    alert.addButton('Abbrechen');
+    alert.addButton({
+      text: 'Ok',
+      handler: (data: any) => {
+        console.log('Radio data:', data);
+        this.testRadioOpen = false;
+        this.testRadioResult = data;
+        this.annonce.vehicleType=data;
+
+        this.verkaufen.addAnnonce(this.annonce);
+        console.log("annonce.vehicleType: " + this.annonce.vehicleType);
+        // this.navCtrl.push(SuchePage);
+        
+      }
+    });
+
+    alert.present();
+  }
+
+
 }
