@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-item>
+    <!-- <ion-item>
       <ion-label>Topic:</ion-label>
       <ion-input [(ngModel)]="annonce.topic" placeholder="Überschrift der Annonce"></ion-input>
     </ion-item>
@@ -23,15 +23,17 @@
     <ion-item>
       <ion-label>Price:</ion-label>
       <ion-input [(ngModel)]="annonce.price" type="number" placeholder="10.000"></ion-input>
-    </ion-item>
+    </ion-item> -->
+    
 
     {{annonce | json}}
 
     <button ion-button block (click)="addAnnonce(annonce)">Annonce Inserieren = Verkaufen</button>
 
     <ion-list>
-      <ion-item *ngFor="let annonce of annonceList$ | async" (click)="selectAnnonceItem(annonce)">
+      <ion-item *ngFor="let annonce of annonceList$ | async">
         <h2>Annonce Überschrift: {{annonce.topic}}</h2>
+        <h3>Annonce Key: {{annonce.key}}</h3>
       </ion-item>
     </ion-list>
 </ion-content>

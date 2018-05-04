@@ -57,4 +57,6 @@ export class VerkaufenPage {
     this.navCtrl.push(SuchePage);
   }
 
+
+  
 }
