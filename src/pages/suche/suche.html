@@ -8,21 +8,22 @@
   </ion-header>
   
   <ion-content>
+    <ion-item align-center>Finde deinen Traumwagen zum besten Preis:</ion-item> 
     <ion-list>
         <ion-item>
-            <ion-label>Auto oder Motorrad</ion-label>
+            <ion-label>Fahrzeugtyp: Auto oder Motorrad</ion-label>
             <ion-select [(ngModel)]="vehicleType">
               <ion-option value="all">Alle</ion-option>
-              <ion-option value="car">Auto</ion-option>
-              <ion-option value="motorcycle">Motorrad</ion-option>
+              <ion-option value="auto">Auto</ion-option>
+              <ion-option value="motorrad">Motorrad</ion-option>
             </ion-select>
           </ion-item>
-        <button ion-item detail-push (click)="doPrompt()">
+        <!-- <button ion-item detail-push (click)="doPrompt()">
             <ion-icon [name]="home" item-start></ion-icon>
             Auto oder Motorrad
-          </button>
+          </button> -->
 
-        <button ion-item detail-push (click)="doPrompt()">
+        <!-- <button ion-item detail-push (click)="doPrompt()">
           <ion-icon name="home" item-start></ion-icon>
           Marke/Modell
         </button>
@@ -30,17 +31,24 @@
         <button ion-item >
           <ion-icon [name]="home" item-start></ion-icon>
           Marke/Modell
-        </button>
+        </button> -->
 
     </ion-list>
     <div *ngIf="selectedItem" padding>
       You navigated here from <b>{{selectedItem.title}}</b>
     </div>
-     <button ion-button block (click)="navigateToListpage()">
-        <ion-icon [name]="home" item-start></ion-icon>
-        navigate To Listpage
+     <button ion-button  color="light" (click)="navigateToSuchePage()">
+        <ion-icon name="home" icon-start></ion-icon>Zurücksetzen
       </button>
-      
-      
+      <button ion-button  color="danger" (click)="navigateToSuchePage()">
+          <ion-icon name="search" icon-start></ion-icon>Suche
+        </button>
+
+      <ion-list>
+          <ion-item *ngFor="let annonce of annonceList$ | async">
+            <h2>Annonce brand: {{annonce.brand}}</h2>
+            <h3>Annonce vehicleType: {{annonce.vehicleType}}</h3>
+          </ion-item>
+        </ion-list>
   </ion-content>
   

@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { ListPage } from '../pages/list/list';
 import { SuchePage } from '../pages/suche/suche';
+import { ListAltPage } from '../pages/list_alt/list_alt';
 
 @Component({
   templateUrl: 'app.html'
@@ -33,6 +34,7 @@ export class MyApp {
       { title: 'Parkplatz', component: 'ParkplatzPage', icon: "bus"  }, //Lazy Loading
       { title: 'Meine Suchen', component: 'MeineSuchenPage', icon: "star"  }, //Lazy Loading
       { title: 'List', component: ListPage, icon: "menu"  }, // Not Lazy Loading
+      { title: 'ListAlt', component: ListAltPage, icon: "menu"  }, // Not Lazy Loading
    
     ];
 

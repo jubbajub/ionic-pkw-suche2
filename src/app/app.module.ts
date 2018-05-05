@@ -10,6 +10,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ListAltPage } from '../pages/list_alt/list_alt';
 import { SuchePage } from '../pages/suche/suche';
 
 import { AngularFireModule } from 'angularfire2';
@@ -22,6 +23,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     MyApp,
     HomePage,
     ListPage,
+    ListAltPage,
     SuchePage
   ],
   imports: [
@@ -35,6 +37,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     MyApp,
     HomePage,
     ListPage,
+    ListAltPage,
     SuchePage
   ],
   providers: [
