@@ -19,7 +19,7 @@
           <button ion-item *ngFor="let annonce of annonceList$ | async" (click)="itemTapped($event, annonce)">
             {{annonce.vehicleType}}
             <div class="item-note" item-end>
-              ({{annonce.brand}}) id:{{annonce.key}}
+            Brand:  ({{annonce.brand}}) id:{{annonce.key}}
             </div>
           </button>
         </ion-list>
