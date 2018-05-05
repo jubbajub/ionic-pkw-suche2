@@ -20,19 +20,19 @@
       <h5>Parameters passed:</h5>
   
       <pre style="background-color: #f8f8f8">selections: [
-    {{myParam | json}}
+    {{detailAnnonce | json}}
   ]</pre>
       </div> -->
 
     <ion-card>
         <ion-card-header>
-          {{myParam.topic}}
+          {{detailAnnonce.topic}}
         </ion-card-header>
         <ion-card-content>
-            KEY:{{myParam.key}}<br>
-            BRAND:{{myParam.brand}}<br>
-            PRICE:{{myParam.price | currency}}<br>
-            VEHICLE TYPE:{{myParam.vehicleType}}<br>
+            KEY:{{detailAnnonce.key}}<br>
+            BRAND:{{detailAnnonce.brand}}<br>
+            PRICE:{{detailAnnonce.price | currency}}<br>
+            VEHICLE TYPE:{{detailAnnonce.vehicleType}}<br>
         </ion-card-content>
       </ion-card>
   </ion-content>

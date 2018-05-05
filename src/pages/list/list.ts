@@ -47,7 +47,7 @@ export class ListPage {
     //im Template ist ein  "click"-Event. Dieser gibt $element und annonce zurück
     itemTapped(event, annonce) {
       
-      this.navCtrl.push('DetailPage', {'myParam': annonce});
+      this.navCtrl.push('DetailPage', {'detailAnnonceParam': annonce});
       console.log(event);
       alert("Annonce clicked key: "+ annonce.key);
     }

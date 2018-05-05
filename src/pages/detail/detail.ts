@@ -15,17 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DetailPage {
 
-  myParam: any;
+  detailAnnonce: any;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams) {
-      this.myParam = navParams.get('myParam');
+      this.detailAnnonce = navParams.get('detailAnnonceParam');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailPage');
-    console.log('Annonce Key:' + this.myParam.key);
+    console.log('Annonce Key:' + this.detailAnnonce.key);
   }
 
 }
