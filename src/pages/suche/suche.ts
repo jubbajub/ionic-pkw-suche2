@@ -11,8 +11,13 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 export class SuchePage {
   
-  navigateToListpage(){
-    this.navCtrl.push(ListPage); //Not LazyLoaded
+  navigateToSucheListPage(vehicleType){
+    this.navCtrl.push('SucheListPage',
+    {
+      'vehicleType': vehicleType
+    });
+    console.log(vehicleType);
+    alert("vehicleType: "+ vehicleType);
   }
   ionViewDidLoad() {
     console.log('_ionViewDidLoad SuchePage');
