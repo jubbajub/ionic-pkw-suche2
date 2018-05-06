@@ -14,12 +14,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'suche-list.html',
 })
 export class SucheListPage {
+  annonce: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.annonce = navParams.get('vehicleType');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SucheListPage');
+    alert("this.annonce: "+ this.annonce);
+    
   }
 
 }

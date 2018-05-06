@@ -1,4 +1,4 @@
-import { SuchePage } from './../suche/suche';
+
 import { AnnonceListService } from './../../services/annonce-list/annonce-list-services';
 
 import { Component } from '@angular/core';

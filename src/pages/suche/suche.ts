@@ -1,4 +1,4 @@
-import { ListPage } from './../list/list';
+
 
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
@@ -11,14 +11,19 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 export class SuchePage {
   
-  navigateToSucheListPage(vehicleType){
+  navigateToSucheListPage(vehicleType, brand){
     this.navCtrl.push('SucheListPage',
     {
-      'vehicleType': vehicleType
+      'vehicleType': vehicleType,
+      'brand': brand
+      
     });
-    console.log(vehicleType);
-    alert("vehicleType: "+ vehicleType);
+    console.log("vehicleType: "+ vehicleType +"brand: "+ brand);
+    alert("vehicleType: "+ vehicleType +"brand: "+ brand);
   }
+
+
+
   ionViewDidLoad() {
     console.log('_ionViewDidLoad SuchePage');
     console.log('_vehicleType: '+ this.vehicleType);
