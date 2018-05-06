@@ -22,7 +22,7 @@ export class SucheListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SucheListPage');
-    alert("this.annonce: "+ this.annonce);
+    alert("this.annonce: "+ this.annonce + " // Hier müsste noch brand ausgegeben werden, aber wie. Als Array habe ich das noch nicht hinbekommen");
     
   }
 

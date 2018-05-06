@@ -15,11 +15,11 @@ export class SuchePage {
     this.navCtrl.push('SucheListPage',
     {
       'vehicleType': vehicleType,
-      'brand': brand
+      'brand': brand //das klappt noch nicht
       
     });
-    console.log("vehicleType: "+ vehicleType +"brand: "+ brand);
-    alert("vehicleType: "+ vehicleType +"brand: "+ brand);
+    console.log("vehicleType: "+ vehicleType +"  // brand: "+ brand);
+    alert("vehicleType: "+ vehicleType +"  // brand: "+ brand);
   }
 
 
