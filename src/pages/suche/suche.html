@@ -18,7 +18,7 @@
               <ion-option value="motorrad">Motorrad</ion-option>
             </ion-select>
           </ion-item>
-          {{vehicleType}} 
+          
           <ion-item>
               <ion-label>MArke</ion-label>
               <ion-select [(ngModel)]="annonce.brand">
@@ -27,39 +27,15 @@
                 <ion-option value="VW">VW</ion-option>
               </ion-select>
             </ion-item>
-            {{brand}} 
-        <!-- <button ion-item detail-push (click)="doPrompt()">
-            <ion-icon [name]="home" item-start></ion-icon>
-            Auto oder Motorrad
-          </button> -->
-
-        <!-- <button ion-item detail-push (click)="doPrompt()">
-          <ion-icon name="home" item-start></ion-icon>
-          Marke/Modell
-        </button>
-
-        <button ion-item >
-          <ion-icon [name]="home" item-start></ion-icon>
-          Marke/Modell
-        </button> -->
 
     </ion-list>
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title}}</b>
-    </div>
      <button ion-button  color="light" (click)="navigateToSuchePage()">
         <ion-icon name="home" icon-start></ion-icon>Zurücksetzen
       </button>
       <button ion-button  color="danger" (click)="navigateToSucheListPage(annonce)">
           <ion-icon name="search" icon-start></ion-icon>Suche
         </button>
-    {{annonce | json}}
+    <br>{{annonce | json}}
 
-      <ion-list>
-          <ion-item *ngFor="let annonce of annonceList$ | async">
-            <h2>Annonce brand: {{annonce.brand}}</h2>
-            <h3>Annonce vehicleType: {{annonce.vehicleType}}</h3>
-          </ion-item>
-        </ion-list>
   </ion-content>
   

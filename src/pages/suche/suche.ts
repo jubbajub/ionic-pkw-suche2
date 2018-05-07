@@ -15,7 +15,7 @@ export class SuchePage {
     topic: '',
     vehicleType: '',
     brand: '',
-    price: undefined,    
+    price: undefined,    //DAs muss eigentlic price_from und price_to heißen, aber dann müsste ich mein Interface, vieleicht auch ändern
   }
   
   navigateToSucheListPage(annonce){
