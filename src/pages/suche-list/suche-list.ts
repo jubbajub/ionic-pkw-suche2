@@ -17,13 +17,12 @@ export class SucheListPage {
   annonce: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.annonce = navParams.get('vehicleType');
+    this.annonce = navParams.get('annonce');
   }
 
-  ionViewDidLoad() {
+  ionViewDidLoad(annonce) {
     console.log('ionViewDidLoad SucheListPage');
-    alert("this.annonce: "+ this.annonce + " // Hier müsste noch brand ausgegeben werden, aber wie. Als Array habe ich das noch nicht hinbekommen");
-    
+    alert("SucheListPage-->annonce.brand: "+ this.annonce.brand + "   /// annonce.vehicleType: "+ this.annonce.vehicleType); 
   }
 
 }

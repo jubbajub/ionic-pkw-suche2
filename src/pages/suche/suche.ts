@@ -1,3 +1,4 @@
+import { Annonce } from './../../models/annonce/annonce.interface';
 
 
 import { Component } from '@angular/core';
@@ -10,16 +11,19 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 })
 
 export class SuchePage {
+  annonce: Annonce = {
+    topic: '',
+    vehicleType: '',
+    brand: '',
+    price: undefined,    
+  }
   
-  navigateToSucheListPage(vehicleType, brand){
-    this.navCtrl.push('SucheListPage',
-    {
-      'vehicleType': vehicleType,
-      'brand': brand //das klappt noch nicht
-      
-    });
-    console.log("vehicleType: "+ vehicleType +"  // brand: "+ brand);
-    alert("vehicleType: "+ vehicleType +"  // brand: "+ brand);
+  navigateToSucheListPage(annonce){
+    this.navCtrl.push('SucheListPage',{'annonce': annonce});
+    // console.log("vehicleType: "+ vehicleType +"  // brand: "+ brand);
+    // alert("vehicleType: "+ vehicleType +"  // brand: "+ brand);
+    console.log("annonce: "+ annonce);
+    alert("SuchePage-->annonce.brand: "+ annonce.brand + "   /// annonce.vehicleType: "+ annonce.vehicleType);
   }
 
 

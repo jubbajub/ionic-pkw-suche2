@@ -12,7 +12,7 @@
     <ion-list>
         <ion-item>
             <ion-label>Fahrzeugtyp: Auto oder Motorrad</ion-label>
-            <ion-select [(ngModel)]="vehicleType">
+            <ion-select [(ngModel)]="annonce.vehicleType">
               <ion-option value="all">Alle</ion-option>
               <ion-option value="auto">Auto</ion-option>
               <ion-option value="motorrad">Motorrad</ion-option>
@@ -21,7 +21,7 @@
           {{vehicleType}} 
           <ion-item>
               <ion-label>MArke</ion-label>
-              <ion-select [(ngModel)]="brand">
+              <ion-select [(ngModel)]="annonce.brand">
                 <ion-option value="all">Alle</ion-option>
                 <ion-option value="BMW">BMW</ion-option>
                 <ion-option value="VW">VW</ion-option>
@@ -50,10 +50,10 @@
      <button ion-button  color="light" (click)="navigateToSuchePage()">
         <ion-icon name="home" icon-start></ion-icon>Zurücksetzen
       </button>
-      <button ion-button  color="danger" (click)="navigateToSucheListPage(vehicleType, brand)">
+      <button ion-button  color="danger" (click)="navigateToSucheListPage(annonce)">
           <ion-icon name="search" icon-start></ion-icon>Suche
         </button>
-    
+    {{annonce | json}}
 
       <ion-list>
           <ion-item *ngFor="let annonce of annonceList$ | async">
