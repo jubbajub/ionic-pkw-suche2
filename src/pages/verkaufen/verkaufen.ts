@@ -24,7 +24,9 @@ export class VerkaufenPage {
     topic: '',
     vehicleType: '',
     brand: '',
-    price: 55000 //wenn undefined, dann muss ein Wert im Formular angegeben werden.
+    price: 55000, //wenn undefined, dann muss ein Wert im Formular angegeben werden.
+    price_from: 0,
+    price_to: 100000,
   }
 
   constructor(

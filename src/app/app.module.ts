@@ -18,6 +18,13 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { FIREBASE_CONFIG } from './firebase.credentials';
 
+//diese drei Locale... wird unter anderem für die currency-pipe benötigt
+//Außerdem muss im provider ..    { provide: LOCALE_ID, useValue: 'de' }
+//und hier im constructor ...registerLocaleData(localeDe); eingetragen werden
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -44,7 +51,12 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: LOCALE_ID, useValue: 'de' },
     AnnonceListService
   ]
 })
-export class AppModule {}
+export class AppModule {
+    constructor() {
+    registerLocaleData(localeDe);
+  }
+}

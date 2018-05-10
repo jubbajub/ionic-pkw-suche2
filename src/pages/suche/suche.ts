@@ -15,7 +15,17 @@ export class SuchePage {
     topic: '',
     vehicleType: '',
     brand: '',
-    price: undefined,    //DAs muss eigentlic price_from und price_to heißen, aber dann müsste ich mein Interface, vieleicht auch ändern
+    price: undefined, 
+    price_from: undefined,
+    price_to: undefined,
+  }
+  structure: any = {lower: 5000, upper: 50000};
+
+  onChange(ev: any) {
+    console.log('Changed', ev);
+    this.annonce.price_from= this.structure.lower;
+    this.annonce.price_to= this.structure.upper;
+
   }
   
   navigateToSucheListPage(annonce){
