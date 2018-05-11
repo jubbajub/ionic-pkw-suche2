@@ -28,22 +28,7 @@
               </ion-select>
             </ion-item>
 
-            <ion-item>
-
-
-                    <ion-label>Preis</ion-label>
-                  <ion-badge item-start color="dark">{{structure.lower | currency:'EUR': true:'1.0-0'}}</ion-badge>
-                  <ion-badge item-end color="dark">{{structure.upper | currency:'EUR': true:'1.0-0'}}</ion-badge>
-
-
-                <ion-range dualKnobs="true"  pin="true"  min="0" max="100000"  snaps="true" [(ngModel)]="structure" (ionChange)="onChange($event)" color="dark" >
-                    <ion-label range-left>{{0 | currency:'EUR': true:'1.0-0'}}</ion-label>
-                    <ion-label range-right>{{100000 | currency:'EUR': true:'1.0-0'}}</ion-label>
-                  </ion-range>
-                  
-
-
-            </ion-item>
+           
 
 
     </ion-list>
